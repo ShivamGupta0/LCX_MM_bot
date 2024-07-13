@@ -24,6 +24,8 @@ A simple trading bot that interacts with LCX and Binance exchanges to fetch mark
    git clone https://github.com/yourusername/crypto-trading-bot.git
    cd crypto-trading-bot
 2. install dependencies:
+   ```sh
    npm install
 3. Run the Market Making Bot:
+   ```sh
    node index.js
