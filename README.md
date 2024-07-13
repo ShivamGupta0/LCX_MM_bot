@@ -1,6 +1,6 @@
 # LCX Market Maker Bot
 
-A simple market making bot that interacts with LCX and Binance exchanges to fetch market data and places orders on LCX using Binance Prices
+market making bot that interacts with LCX and Binance exchanges to fetch market data and places orders on LCX using Binance Prices
 
 ## Features
 
@@ -19,6 +19,24 @@ A simple market making bot that interacts with LCX and Binance exchanges to fetc
 - `orderManager.js`: Manages the placing and canceling of orders.
 - `strategy.js`: Implements the market making strategy.
 - `index.js`: Contains initialisation details (Pair, Inventory..)
+
+## Project Flow
+```mermaid
+graph LR;
+    index.js-->strategy.js-->exchange.js-->|LCX|marketData.js;
+    strategy.js-->binanceExchange.js-->|Binance|marketData.js;
+    exchange.js-->|Balances|strategy.js;
+    marketData.js-->strategy.js;
+    strategy.js-->|Generated Orders|orderManager.js-->|OrderId returned| strategy.js;
+    orderManager.js-->|Fetch OO,cancel,place orders| exchange.js;
+```
+## Improvements Scope [To be completed]
+- [ ] Get API credentials and implement orderID callbacks
+- [x] Fetch pair details using API
+- [ ] modify prices for pair not available on Binance
+- [x] Make strategy position dependent
+
+
 
 ## Installation
 
