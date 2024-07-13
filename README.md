@@ -35,6 +35,8 @@ graph LR;
 - [x] Fetch pair details using API
 - [ ] modify prices for pair not available on Binance
 - [x] Make strategy position dependent
+- [x] Add code to measure latency
+- [ ] Use websockets for faster data accessing
 
 
 
